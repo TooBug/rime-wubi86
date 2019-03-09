@@ -1,0 +1,34 @@
+# Rime schema settings
+# encoding: utf-8
+
+patch:
+  speller/max_code_length: 4
+  speller/auto_select: true
+  speller/auto_select_unique_candidate: true
+  # ascii_composer/switch_key/Enter: inline_ascii
+  key_binder/bindings:
+    - { when: has_menu, accept: comma, send: comma }
+    - { when: has_menu, accept: period, send: period }
+    - { when: always, accept: Shift+space, toggle: full_shape }
+    # - { when: composing, accept: space, send: Escape }
+    # - { when: always, accept: Caps_Lock, toggle: ascii_mode }
+  # punctuator/half_shape:
+    # "[": {commit: "【"}
+    # "]": {commit: "】"}
+  switches:
+    - name: ascii_mode
+      reset: 0
+      states: [ 中文, 西文 ]
+    - name: full_shape
+      states: [ 半角, 全角 ]
+    - name: simplification
+      states: [ 简体, 繁體 ]
+    - name: extended_charset
+      states: [ 常用, 增廣 ]
+    - name: ascii_punct
+      states: [ 。，, ．， ]
+  simplifier/opencc_config: s2t.json
+  engine/filters:
+    - simplifier
+    - uniquifier
+  # translator/enable_sentence: false

@@ -1,0 +1,26 @@
+patch:
+  schema_list:
+    - schema: wubi86
+  ascii_composer/good_old_caps_lock: true
+  ascii_composer/switch_key:
+    Shift_L:noop
+    Shift_R:noop
+    Caps_Lock:clear
+  punctuator/half_shape:
+    "[": {commit: "【"}
+    "]": {commit: "】"}
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    ",": {commit: "，"}
+    .: {commit: "。"}
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈"]
+    ">": ["》", "〉"]
+    "?": {commit: "？"}
+    "\\": {commit: "、"}
+    "^": {commit: "……"}
+    _: "——"
